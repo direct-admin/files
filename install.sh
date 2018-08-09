@@ -468,19 +468,6 @@ wget https://fpt.ovh/phpMyAdmin-4.2.2-english.7z
 7za x -r phpMyAdmin-4.2.2-english.7z >7za1.log
 cp -R phpMyAdmin-4.2.2-english/* /var/www/html/phpMyAdmin/
 
-##### Making phpmyadmin.conf file #####
-PHPMYADMIN_CONF=phpmyadmin.conf
-echo "#"   > $PHPMYADMIN_CONF;
-echo "#  Web application to manage MySQL"   >> $PHPMYADMIN_CONF;
-echo "#"   >> $PHPMYADMIN_CONF;
-echo "Alias /phpmyadmin /usr/share/phpMyAdmin"   >> $PHPMYADMIN_CONF;
-echo "Alias /phpMyAdmin /usr/share/phpMyAdmin"   >> $PHPMYADMIN_CONF;
-echo ""   >> $PHPMYADMIN_CONF;
-
-cp phpmyadmin.conf /etc/httpd/conf.d/phpmyadmin.conf ;
-
-chown -R apache:apache /usr/share/phpMyAdmin
-
 ##### Making vars.php file #####
 VARS_CONF=vars.php
 echo "<?php"   > $VARS_CONF;
