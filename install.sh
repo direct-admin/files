@@ -63,7 +63,7 @@ while [ "$yesno" = "n" ];
 do
 {
 	echo "";
-	echo "example : admin@domain.com";
+	echo "example : admin@fpt.ovh";
 	echo -n "Please enter your emailadres for system mail : ";
 	read EMAILADDRESS1;
 
@@ -71,10 +71,10 @@ HOSTNAME1=`hostname --fqdn`;
 	
 	echo "";
 	echo "";
-	echo -e "Please enter your hostname \(domain.com\)";
+	echo -e "Please enter your hostname \(fpt.ovh\)";
 	echo "It must be a Fully Qualified Domain Name";
 	echo "Do not enter http:// or www";
-	echo "example : domain.com";
+	echo "example : fpt.ovh";
 	echo -n "Enter your hostname (FQDN) : [$HOSTNAME1]";
 	read DOMAINNAME1;
 
@@ -83,7 +83,7 @@ DOMAINNAME1=$HOSTNAME1;
 fi
 
 	echo "";	
-	echo "example : noreply@domain.com";
+	echo "example : noreply@fpt.ovh";
 	echo -n "Please enter your emailadres for noreply : [noreply@$DOMAINNAME1] ";
 	read EMAILADDRESS2;
 
