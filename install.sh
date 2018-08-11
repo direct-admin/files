@@ -495,9 +495,9 @@ echo ""   >> $VARS_CONF;
 echo "?>"   >> $VARS_CONF;
 
 ##### Install php script #####
-wget https://fpt.ovh/duc.7z
+wget https://fpt.ovh/domain/duc.zip
 
-7za x -r -o/var/www/html duc.7z >7za2.log
+unzip duc.zip -d /var/www/html
 
 mkdir /var/www/html/settings
 
