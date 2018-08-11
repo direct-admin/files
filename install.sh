@@ -464,7 +464,7 @@ service pdns restart
 ##### Get phpMyAdmin 4.2.2 (20-05-2014) DD-MM-YYYY #####
 wget https://fpt.ovh/domain/phpMyAdmin.zip
 unzip phpMyAdmin.zip
-cp phpMyAdmin /var/www/html/phpMyAdmin/*
+mv phpMyAdmin /var/www/html/
 
 ##### Making vars.php file #####
 VARS_CONF=vars.php
