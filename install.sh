@@ -546,6 +546,33 @@ rm -rf /var/www/html/phpMyAdmin.zip
 ##### Removing install.sh #####
 rm -rf install.sh
 
+	rm -rf /etc/sysconfig/iptables
+	echo "*filter" >> /etc/sysconfig/iptables
+	echo ":INPUT ACCEPT [0:0]" >> /etc/sysconfig/iptables
+	echo ":FORWARD ACCEPT [0:0]" >> /etc/sysconfig/iptables
+	echo ":INPUT ACCEPT [0:0]" >> /etc/sysconfig/iptables
+	echo ":INPUT ACCEPT [0:0]" >> /etc/sysconfig/iptables
+	echo ":OUTPUT ACCEPT [0:0]" >> /etc/sysconfig/iptables
+	echo "-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -p icmp -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -i lo -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -p tcp -m tcp --dport 21 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -p tcp -m tcp --dport 20 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A OUTPUT -p tcp -m tcp --dport 21 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A OUTPUT -p tcp -m tcp --dport 20 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -p tcp -m state --state NEW -m tcp --dport 25 -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -p tcp -m state --state NEW -m tcp --dport 465 -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -p udp --dport 53 -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -p tcp --dport 53 -j ACCEPT" >> /etc/sysconfig/iptables
+	echo "-A INPUT -j REJECT --reject-with icmp-host-prohibited" >> /etc/sysconfig/iptables
+	echo "-A FORWARD -j REJECT --reject-with icmp-host-prohibited" >> /etc/sysconfig/iptables
+	echo "COMMIT" >> /etc/sysconfig/iptables
+	echo "IPTABLES_MODULES=\"ip_conntrack_ftp\"" >> /etc/sysconfig/iptables-config
+	service iptables restart
+
 echo "" ;
 echo "" ;
 echo "Installation Complete.";
