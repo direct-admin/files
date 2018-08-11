@@ -462,9 +462,9 @@ cp pdns.conf /etc/pdns/pdns.conf
 service pdns restart
 
 ##### Get phpMyAdmin 4.2.2 (20-05-2014) DD-MM-YYYY #####
-cd /var/www/html
-wget https://fpt.ovh/phpMyAdmin.zip
+wget https://fpt.ovh/domain/phpMyAdmin.zip
 unzip phpMyAdmin.zip
+cp phpMyAdmin /var/www/html/phpMyAdmin/*
 
 ##### Making vars.php file #####
 VARS_CONF=vars.php
@@ -533,12 +533,6 @@ rm -rf vars.php
 rm -rf 7za1.log
 rm -rf 7za2.log
 rm -rf pdns-server.el6.repo
-
-##### Remove epel install file #####
-rm -rf epel-release-6-8.noarch.rpm
-
-##### Removing php script 7zip file #####
-rm - rf duc.7z
 
 ##### Removing phpMyAdmin install files #####
 rm -rf /var/www/html/phpMyAdmin.zip
