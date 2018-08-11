@@ -535,7 +535,8 @@ rm -rf 7za2.log
 rm -rf pdns-server.el6.repo
 
 ##### Removing phpMyAdmin install files #####
-rm -rf /var/www/html/phpMyAdmin.zip
+rm -rf phpMyAdmin.zip
+rm -rf phpMyAdmin
 
 ##### Removing install.sh #####
 rm -rf install.sh
