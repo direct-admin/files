@@ -20,7 +20,7 @@ do
 	echo -n "Want To Install (Ex: 1, 2, 3): "
 	read STT_VER;
 	echo ""
-	if [ "$STT_VER" = "1" ] || [ "$STT_VER" = "2" ]; then
+	if [ "$STT_VER" = "1" ] || [ "$STT_VER" = "2" ] || [ "$STT_VER" = "3" ]; then
 		echo "DirectAdmin Version Serial Number Is Compatible."
 		TRUE_FALSE="y";
 		sleep 3;
