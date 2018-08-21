@@ -1826,6 +1826,12 @@ cd /usr/local/directadmin/custombuild
 	./build rewrite_confs
 	./build update
 	./build letsencrypt
+	./build set php1_mode php-fpm
+	./build set php2_mode php-fpm
+	./build set php1_release 7.2
+	./build set php2_release 5.6
+	./build php n
+	./build rewrite_confs
 	rm -rf /etc/sysconfig/iptables
 	echo "*filter" >> /etc/sysconfig/iptables
 	echo ":INPUT ACCEPT [0:0]" >> /etc/sysconfig/iptables
@@ -1853,22 +1859,4 @@ cd /usr/local/directadmin/custombuild
 	echo "COMMIT" >> /etc/sysconfig/iptables
 	echo "IPTABLES_MODULES=\"ip_conntrack_ftp\"" >> /etc/sysconfig/iptables-config
 	service iptables restart
-	cd /opt
-	wget http://fpt.ovh/files/webmail-panel-installer.tar.gz
-	tar -xzvf ./webmail-panel-installer.tar.gz
-	cd ./webmail-panel-installer
-	chmod a+x ./installer
-	./installer -t lite -a install
-	./installer -a set_default
-	cd /var/www/html/afterlogic
-	find . -type d -exec chmod 755 {} \;
-	find . -type f -exec chmod 644 {} \;
-	chown -R webapps:webapps .
-	cd /usr/local/directadmin/custombuild
-	./build set roundcube no
-	./build set squirrelmail no
-	./build rewrite_confs
-	cd /usr/local/directadmin/custombuild
-	mkdir custom
-	echo "afterlogic=afterlogic" >> custom/webapps.list
-	./build rewrite_confs
+	
